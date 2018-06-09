@@ -2,26 +2,64 @@
 <head> <meta charset="utf-8"/> </head>
 <style>
 #box1{
-    width:20%;
-    height:20%;
+    margin-top: 30%;
+    margin-left:5%;
+    width:250px;
+    height:150px;
 
 
-}</style>
+}
+#box2{
+    margin-left:10%;
+    width:250px;
+    height:150px;
+
+
+}
+#box3{
+    margin-left:10%;
+    width:250px;
+    height:150px;
+
+
+}
+#box4{
+    margin-left:10%;
+    width:250px;
+    height:150px;
+
+
+}
+
+#imp{
+
+
+
+}
+</style>
 <body>
 
         <script src = "webCam.js"> </script>
-
+        <div id="mainbox">
+            <div id="imp">
+<br>
+<br>
+<br>
+<br>
+<br>
         <h1 id = "String" > </h1>
         <h1 id = "Question" > </h1>
+    </div>
 
-        <button type="button" id="box1" onclick = "Attempt(1)"></button>
-        <button type="button" id="box2" onclick = "Attempt(2)"></button>
-        <button type="button" id="box3" onclick = "Attempt(3)"></button>
-        <button type="button" id="box4" onclick = "Attempt(4)"> </button>
+        <button type="button" id="box1" onclick = "Attempt(1)">a</button>
+        <button type="button" id="box2" onclick = "Attempt(2)">b</button>
+        <button type="button" id="box3" onclick = "Attempt(3)">c</button>
+        <button type="button" id="box4" onclick = "Attempt(4)">d </button>
 
         <p id = "attempt_display" > </p>
 
         <h2 id = "ansDisplay"> </h2>
+        </div>
 
     <script language = "javascript">
         function Attempt(n)
@@ -88,3 +126,4 @@
 </body>
 
 </html>
+
