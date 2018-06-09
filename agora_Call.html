@@ -9,6 +9,12 @@
 </head>
 
 <body>
+<script language = "javascript"> 
+    function noCall()
+    {
+        window.location = "noCall_MCQ.html";
+    }
+  </script>
 <div id="div_device" class="panel panel-default">
 <div class="select">
 <label for="audioSource">Audio source: </label><select id="audioSource"></select>
@@ -23,7 +29,7 @@
 Key: <input id="key" type="text" value="7789fbfd124941cbbb9b9306f6905588" size="36"></input>
 Channel: <input id="channel" type="text" value="1000" size="4"></input>
 Host: <input id="video" type="checkbox" checked></input>
-<button id="join" class="btn btn-primary" onclick="join()">Join</button>
+<button id="join" class="btn btn-primary" onclick="join()" onhover ="setTimeout(noCall, 30000);">Join</button>
 <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
 <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
 
