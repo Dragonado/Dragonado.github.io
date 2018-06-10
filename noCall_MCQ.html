@@ -84,7 +84,7 @@
         var running_num = 1;                                                      // boxes for options
         var OCR_text = localStorage.getItem("scan_text");
 
-        var ans = 2;                                                    // 1-4 options
+        var ans = localStorage.getItem("answer");                                                    // 1-4 options
         var que = "Q) ";                                                   // The questions
 
         for(var i = 0; i < OCR_text.length; i++)
