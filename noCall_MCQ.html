@@ -32,6 +32,7 @@
     font-size: 35px;
     background-color: white;
 }
+
 #Question{
     font-size:100px;
     margin-bottom: 10%;
@@ -64,7 +65,6 @@
         <br>
         <br>
 
-
         <h2 id = "ansDisplay"> </h2>
         </div>
 
@@ -72,7 +72,6 @@
 
         function Attempt(n)
         {
-
             if(n == ans)
             {
                 alert("You clicked option " + String(n) + "\n" + "The answer is: "+String(ans) +"\n"+"You got it right!");
@@ -81,10 +80,14 @@
         }
 
 
-        var running_num = 1;                                                      // boxes for options
-        var OCR_text = localStorage.getItem("scan_text");
+        var running_num = 1;
+        if(localStorage.getItem('cam') != "true")                                                  // boxes for options
+            var OCR_text = localStorage.getItem("scan_text_pic");
+        else var OCR_text = localStorage.getItem("scan_text_cam");
 
-        var ans = localStorage.getItem("answer");                                                    // 1-4 options
+
+        if(localStorage.getItem("answer")) var ans = localStorage.getItem("answer");
+        else var ans = 1;                                                 // 1-4 options
         var que = "Q) ";                                                   // The questions
 
         for(var i = 0; i < OCR_text.length; i++)
