@@ -82,7 +82,6 @@ background-color: #00FF7F;
 
         function Attempt(n)
         {
-
             if(n == ans)
             {
                 alert("You clicked option " + String(n) + "\n" + "The answer is: "+String(ans) +"\n"+"You got it right!");
@@ -91,10 +90,14 @@ background-color: #00FF7F;
         }
 
 
-        var running_num = 1;                                                      // boxes for options
-        var OCR_text = localStorage.getItem("scan_text");
+        var running_num = 1;
+        if(localStorage.getItem('cam') != "true")                                                  // boxes for options
+            var OCR_text = localStorage.getItem("scan_text_pic");
+        else var OCR_text = localStorage.getItem("scan_text_cam");
 
-        var ans = localStorage.getItem("answer");                                                    // 1-4 options
+
+        if(localStorage.getItem("answer")) var ans = localStorage.getItem("answer");
+        else var ans = 1;                                                 // 1-4 options
         var que = "Q) ";                                                   // The questions
 
         for(var i = 0; i < OCR_text.length; i++)
