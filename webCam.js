@@ -25,16 +25,8 @@
         context.drawImage(video, 0, 0);
         scan_text = OCRAD(context);
         alert(scan_text);
-        localStorage.setItem("question", scan_text);
+        localStorage.setItem("scan_text_cam", scan_text);
+        localStorage.setItem("cam", "true");
 
         window.location = "MCQ_Page.html";
-    }
-
-    function pass(cb)
-    {
-        local_variable = "Local";
-        //return local_variable;
-        console.log(scan_text)
-        cb(scan_text);
-        //return scan_text;
     }
