@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Accessing Web Camera in JS</title>
+		<style>
+		#box{
+			width:70%;
+			height:1000PX;
+			margin-left: 15%;
+			background-color:white;
+			border-radius: 1%;
+			box-shadow: 4px 4px  30px black;
+		}
+		#video{
+			width:500px;
+			height:500px;
+			margin-left: 30%;
+		}
+		#butt{
+			width:10%;
+			height: 10%;
+			margin-left: 45%;
+
+
+		}
+
+
+
+.x{
+	position:relative;
+	width:55%;
+	height:35%;
+	margin-left: 5%;
+
+
+}
+@keyframes example {
+	from{font-size: 0px;}
+
+	to{font-size:100px;}
+
+
+
+
+}
+#head{
+	margin-left: 42.5%;
+	font-family:arial;
+	font-size: 100px;
+	color:white;
+
+
+
+}
+
+
+
+
+		</style>
+
+	</head>
+	<body bgcolor="#4d4dff">
+
+<header id="head">Vector</header>
+</br>
+</br>
+
+		<div id="box"><video id="video"></video>
+		<canvas id="canvas"></canvas><br>
+		<button id="butt" onclick="snap();">Snap</button>
+
+
+		<script src = "ocrad.js"> </script>
+		<script src = "webCam.js"></script>
+		<h2> <center><B> <ul>Preloaded Image</ul></B></center></</h2>
+
+		<div id="pics">
+			<a href="testPics1.html"><img src="testIMG1.png" id="1" class="x"></a>
+			<a href="testPics2.html"><img src="testIMG2.png" id="2"class="x"></a>
+
+
+		</div>
+
+
+
+	</body>
+</html>

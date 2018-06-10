@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<head> <meta charset="utf-8"/> </head>
+<style>
+#box1{
+    margin-top: 150px;
+    margin-left:5%;
+    width:250px;
+    height:150px;
+    font-size: 35px;
+
+
+}
+#box2{
+    margin-left:10%;
+    width:250px;
+    height:150px;
+    font-size: 35px;
+
+
+}
+#box3{
+    margin-left:10%;
+    width:250px;
+    height:150px;
+    padding:10px;
+    font-size: 35px;
+}
+#box4{
+    margin-left:10%;
+    width:250px;
+    height:150px;
+    font-size: 35px;
+    background-color: white;
+}
+#box5{
+    margin-left:10%;
+    width:225px;
+    height:125px;
+    padding:10px;
+background-color: #00FF7F;
+    margin-left: 45%;
+}
+#Question{
+    font-size:100px;
+    margin-bottom: 10%;
+    padding-bottom: 50px;
+}
+#imp{
+    background-color: white;
+    border radius:10px;
+    margin-top: 5%;
+    padiing:20px;
+}
+</style>
+<body bgcolor="#4d4dff">
+
+        <script src = "webCam.js"> </script>
+        <div id="mainbox">
+            <div id="imp">
+<br>
+
+
+        <h1 id = "String" > </h1>
+        <h1 id = "Question" align="center" > </h1>
+    </div>
+
+        <button type="button" id="box1" onclick = "Attempt(1)">a</button>
+        <button type="button" id="box2" onclick = "Attempt(2)">b</button>
+        <button type="button" id="box3" onclick = "Attempt(3)">c</button>
+        <button type="button" id="box4" onclick = "Attempt(4)">d </button>
+        <br>
+        <br>
+        <br>
+
+
+            <a href = "agora_Call.html"> <button id="box5"><h1> Call </h1></button> </a>
+
+        <h2 id = "ansDisplay"> </h2>
+        </div>
+
+    <script language = "javascript">
+
+        function Attempt(n)
+        {
+
+            if(n === ans)
+            {
+                alert("You clicked option " + String(n) + "\n" + "The answer is: "+String(ans) +"\n"+"You got it right!");
+            }
+            else alert("You clicked option " + String(n) + "\n" + "The answer is: "+String(ans) +"\n"+"You got it wrong");
+        }
+
+
+        var running_num = 1;                                                      // boxes for options
+        var OCR_text = localStorage.getItem("scan_text");
+
+        var ans = 3;                                                    // 1-4 options
+        var que = "Q) ";                                                   // The questions
+
+        for(var i = 0; i < OCR_text.length; i++)
+        {
+            if(OCR_text[i] == '(') break;
+            que += OCR_text[i];
+        }
+
+        document.getElementById('Question').innerHTML = que;
+
+        for(var i = 0; i < OCR_text.length; i++)
+        {
+            if(OCR_text[i] == '(')
+            {
+                var next = 0; // Finding the next opening index of bracket
+                var option = ""; // temporary option OCR_text
+                for(next = i+1; next < OCR_text.length; next++) if(OCR_text[next] == '(') break;
+
+                for(var j = i; j < next; j++)
+                {
+                    option += OCR_text[j];
+                }
+                if(running_num == 1)
+                {
+                    document.getElementById('box1').innerHTML = option;
+                    running_num++;
+                }
+                else if(running_num == 2)
+                {
+                    document.getElementById('box2').innerHTML = option;
+                    running_num++;
+                }
+                else if(running_num == 3)
+                {
+                    document.getElementById('box3').innerHTML = option;
+                    running_num++;
+                }
+                else
+                {
+                    document.getElementById('box4').innerHTML = option;
+                }
+                console.log(option);
+            }
+        }
+    </script>
+</body>
+
+</html>
